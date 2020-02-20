@@ -1,0 +1,212 @@
+\documentclass[a4paper, 10pt, DIV=16, parskip = full, twocolumn = true]{scrartcl}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{lastpage}
+\usepackage{scrlayer-scrpage}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[section]{placeins}
+\usepackage{pdfpages}
+\usepackage{layout}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{placeins}
+\usepackage{inconsolata}
+\usepackage[bottom]{footmisc}
+\usepackage[group-digits=false]{siunitx}
+\usepackage{caption}
+\usepackage{tikz}
+\usetikzlibrary{shapes, scopes, decorations.pathmorphing, decorations.markings, patterns, calc}
+%\usepackage{steinmetz} % Phasor notation
+%\usepackage{mathptmx} % Adobe Times Roman
+\usepackage{physics} % Derivative notation
+
+\graphicspath{{./figures/}}
+
+%\setlength{\parskip}{3pt}
+\setlength{\columnsep}{15pt}
+%\onehalfspacing
+%\setlength{\columnseprule}{0.1pt}
+\cofoot{\thepage\ of \pageref{LastPage}}
+\subject{METU MEXXX NAME OF THE COURSE, Fall 2019 \\ Homework X}
+\title{}
+\author{Ali Levent Çınar / 2234532}
+\date{MONTH DAY, 2019}
+
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand*\thesection{Solution \arabic{section}}
+\renewcommand*\thesubsection{\!\!\!}
+\renewcommand{\theequation}{\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\answer}[1]{\tag{Ans. #1}}
+\newcommand{\unit}[1]{\mathrm{#1}}
+\newcommand{\eunit}[1]{\enspace\mathrm{#1}}
+\newcommand{\ui}{\hat{\imath}}
+\newcommand{\uj}{\hat{\jmath}}
+\newcommand{\uk}{\hat{\kmath}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\degrees}{^{\circ}}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{ frame=single,
+	language=Matlab,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	keepspaces=true, 
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+	breakatwhitespace=true,
+	captionpos=t,
+	tabsize=3
+}
+
+\begin{document}
+	\maketitle
+	\thispagestyle{scrheadings}
+	%\includepdf[pages=-]{Images/Title-Page.pdf} % set twocolumn = false
+	\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+\section{}
+
+Design of a moving platform which is controlled by the movement of the fish.
+
+
+Name: Design and manufacture of a moving wheeled robot controlled by the movement of a fish swimming inside an aquarium.
+
+Defition:
+- explain fully
+- put examples
+- put figures
+
+-- Requirements:
+1. The robot should be able to navigate on the floors of the mechatronics laboratory, it should be able to accelerate and stop delibately.
+2. The robot should avoid obstacles and should be able to detect the moving obstacles within its proximity.
+3. The water inside the aquarium should be contained and it shouldn't be spilled, to this end the robot should be able to accelerate smoothly.
+4. In order to ensure the health of the fish, foreign objects shouldn't be able to enter the aquarium water and care must be given to prevent tipping over of the robot.
+5. The fish should be made aware of the robot's current action and status, for example by exposing the fish to color coded lights. 
+6. The temperature of the water should be monitored and if necessary, it should be regulated.
+7. The robot should be able to self charge and it should be able operate for acceptable durations.
+8. The robot should have navigational safety overrides that prevents the fish from controlling the movement of the robot, for example on the command of the authorized personnel or when the fish wants to rest.
+9. The robot should be able to communicate with the network and it should be able to receive and transmit messages, such as reporting water temperature, battery charge, position etc.
+10. The robot and its extensions (for example, if required, the docking station) should be aesthetically pleasing.
+11. The robot should not pose any mechanical dangers to any humans.
+
+-- Specifications:
+1. No jerk higher than 0.5 ms-3
+https://web.archive.org/web/20150314224900/http://www.lift-report.de/index.php/news/176/368/Elevator-Ride-Quality
+2. The robot should be able to operate at least for 6 hours a day for 2 years.
+3. The aquarium should be positioned at a height of at least 30 cm for practical and aesthetical concerns.
+4. The robot should be able to carry a weight of 20 kg including the aquarium water.
+5. It is expected for the aquarium to contain at least 10 liters of water.
+6. The final project cost is within 1500 TRY.
+
+-- Criteria:
+
+Mobility (40%):
+- It can move the aquarium around the mechatronics laboratory based on the movement of the fish while avoiding obstacles (20%).
+- Smooth acceleration and braking (20%).
+Durability  (20%): 
+- It can operate at least for 6 hours a day for 2 years (10%).
+- It does not topple over easily (10%).
+Aesthetics (15%):
+- Aesthetically pleasing to the eye (15%).
+Interconnectivity (15%):
+- The robot can communicate with the network (15%).
+Cost (10%):
+- The final project cost is within the budget (10%).
+
+
+%	\begin{figure}[!h]
+%	\centering
+%	\includegraphics[width=0.77\columnwidth]{hw1-p1-f1}
+%	\caption{Variation of surface temperature along the plate, experimental data and empirical predictions compared.}
+%	\label{fig:fbd}
+%	\end{figure}
+
+%\begin{figure}[!h] 
+%	\centering
+%	
+%	\begin{tikzpicture}[]
+%	\tikzstyle{line}=[thick],
+%	\tikzstyle{reference}=[thin, dashed],
+%	\tikzstyle{axis}=[>=stealth, thick],
+%	\tikzstyle{force}=[>=latex, thick],
+%	\tikzstyle{mass}=[draw=black, thick, minimum width = 1.5cm, minimum height = 1.5cm],
+%	\tikzstyle{spring}=[thick,decorate,decoration={zigzag,pre length=0.3cm,post length=0.3cm,segment length=6}]
+%	\tikzstyle{dashpot}=[thick,decoration={markings,  
+%		mark connection node=dmp,
+%		mark=at position 0.5 with 
+%		{
+%			\node (dmp) [thick,inner sep=0pt,transform shape,rotate=-90,minimum width=15pt,minimum height=3pt,draw=none] {};
+%			\draw [thick] ($(dmp.north east)+(2pt,0)$) -- (dmp.south east) -- (dmp.south west) -- ($(dmp.north west)+(2pt,0)$);
+%			\draw [thick] ($(dmp.north)+(0,-5pt)$) -- ($(dmp.north)+(0,5pt)$);
+%		}
+%	}, decorate]
+%	\tikzstyle{hysteric}=[thick,decoration={markings,  
+%		mark connection node=square,
+%		mark=at position 0.5 with 
+%		{
+%			\node (square) [thick,inner sep=0pt,minimum width=15pt,minimum height=15pt,draw=black] {};
+%			\node (cross) [cross out, minimum size=14pt, draw=black, thick] {};
+%		}
+%	}, decorate]
+%	\tikzstyle{ground}=[fill,pattern=north east lines,draw=none,minimum width=1cm,minimum height=0.25cm]
+%	
+%	\node (mass) [mass] {$m$};
+%	\node (ground) at (mass.north) [ground,yshift=3cm,anchor=south] {};
+%	\draw (ground.south west) -- (ground.south east);
+%	\coordinate (a1) at ($(mass.north) + (-0.5cm,0.75cm)$);
+%	\coordinate (a2) at ($(mass.north) + (0.5cm,0.75cm)$);
+%	\coordinate (b1) at ($(ground.south) + (-0.5cm,-0.75cm)$);
+%	\coordinate (b2) at ($(ground.south) + (0.5cm,-0.75cm)$);
+%	\draw [spring] (a1) -- (b1) node[midway, left, xshift=-0.1cm] {$k$} ;
+%	\draw [hysteric] (a2) -- (b2) node[midway, right, xshift=0.3cm] {$h$};
+%	\draw [line] (a1) -| (mass.north);
+%	\draw [line] (a2) -| (mass.north);
+%	\draw [line] (b1) -| (ground.south);
+%	\draw [line] (b2) -| (ground.south);
+%	\coordinate (c) at ($(mass.east) + (0.5cm,0)$);
+%	\draw [axis, ->] (c) -- ++(0,-0.5cm) node[right] {$x(t)$};
+%	\draw [reference] (c) -- (mass.east); 
+%	\draw [force,->] (mass.south) -- ++(0,-0.75cm) node[right] {$F(t)$}; 
+%	\end{tikzpicture}
+%	\caption{Free body diagram of the equivalent SDOF system.}
+%	\label{fig:simplemodel}
+%\end{figure} 
+	
+%	\begin{table}
+%	\centering
+%	\caption{System specifications}
+%		\begin{tabular}{lSl}
+%		\toprule
+%			Property & {Value} & Unit \\
+%		\midrule
+%			Rise Time & 0.219 & s \\	
+%			Settling Time & 0.951 & s \\
+%			Overshoot & 14.1 &\% \\
+%			Peak Time & 0.502 & s\\
+%		\bottomrule
+%		\end{tabular}
+%	\label{specs}
+%	\end{table}
+
+%\section*{References}
+%[1]  Incropera, Frank P., Dewitt, David P., Bergman, Theodore L. and Lavine, Arienne S. \textit{Incropera's Principles of Heat and Mass Transfer},  John Wiley and Sons, Hoboken (2017).
+
+\end{document}

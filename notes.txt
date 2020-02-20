@@ -1,0 +1,11 @@
+to do:
+- prettify problem definition document
+- prettify and listify functional decomposition
+- brain storming
+- morphological chart
+- play on gannt chart 
+- literature survey
+- market survey 
+check out:
+- fusion360
+- webcam fiyatlarına özelliklerine bak, raspberry ile uyumlu

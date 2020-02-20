@@ -1,0 +1,41 @@
+-- Name: Design and manufacture of a wheeled robot controlled by the movement of a fish swimming inside an aquarium.
+
+-- Defition:
+This project aims to design and manufacture a wheeled robot controlled by the movement of a fish swimming inside and aquarium. This project was inspired by similar projects publicly available on the internet, such as []. Our goal is to design a robot that can move very smoothly compared to the existing examples. We plan to achieve this by carefully designing/selecting the wheels and motors. As this robot will be an important part of the mechatronics laboratory, it is important that it looks nice and it is durable. The robot should be able to interact with the fish, its environment and the network.
+
+-- Requirements:
+1. The robot should be able to navigate on the floors of the mechatronics laboratory, it should be able to accelerate and stop delibately.
+2. The robot should avoid obstacles and should be able to detect the moving obstacles within its proximity.
+3. The water inside the aquarium should be contained and it shouldn't be spilled, to this end the robot should be able to accelerate smoothly.
+4. In order to ensure the health of the fish, foreign objects shouldn't be able to enter the aquarium water and care must be given to prevent tipping over of the robot.
+5. The fish should be made aware of the robot's current action and status, for example by exposing the fish to color coded lights. 
+6. The temperature of the water should be monitored and if necessary, it should be regulated.
+7. The robot should be able to self charge and it should be able operate for acceptable durations.
+8. The robot should have navigational safety overrides that prevents the fish from controlling the movement of the robot, for example on the command of the authorized personnel or when the fish wants to rest.
+9. The robot should be able to communicate with the network and it should be able to receive and transmit messages, such as reporting water temperature, battery charge, position etc.
+10. The robot and its extensions (for example, if required, the docking station) should be aesthetically pleasing.
+11. The robot should not pose any mechanical dangers to any humans.
+
+-- Specifications:
+1. No jerk higher than 0.5 ms-3
+https://web.archive.org/web/20150314224900/http://www.lift-report.de/index.php/news/176/368/Elevator-Ride-Quality
+2. The robot should be able to operate at least for 6 hours a day for 2 years.
+3. The aquarium should be positioned at a height of at least 30 cm for practical and aesthetical concerns.
+4. The robot should be able to carry a weight of 20 kg including the aquarium water.
+5. It is expected for the aquarium to contain at least 10 liters of water.
+6. The final project cost is within 2000 TRY.
+
+-- Criteria:
+
+Mobility (40%):
+- It can move the aquarium around the mechatronics laboratory based on the movement of the fish while avoiding obstacles (20%).
+- Smooth acceleration and braking (20%).
+Durability  (20%): 
+- It can operate at least for 6 hours a day for 2 years (10%).
+- It does not topple over easily (10%).
+Aesthetics (15%):
+- Aesthetically pleasing to the eye (15%).
+Interconnectivity (15%):
+- The robot can communicate with the network (15%).
+Cost (10%):
+- The final project cost is within the budget (10%).
