@@ -1,6 +1,6 @@
 # Ignore References
-*.orig
-*.asv
+*.aux
+*.bcf
 *.log
 *.run.xml
 *.synctex.gz
