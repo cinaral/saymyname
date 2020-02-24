@@ -1,0 +1,20 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Definition}{2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Requirements}{2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Specifications}{2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Criteria}{3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1}Mobility(40\%)}{3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2}Durability(20\%)}{3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3}Aesthetics(15\%)}{3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4}Interconnectivity(15\%)}{3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.5}Cost(10\%)}{3}
