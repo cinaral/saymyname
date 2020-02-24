@@ -1,0 +1,7 @@
+# Ignore References
+*.orig
+*.asv
+*.log
+*.run.xml
+*.synctex.gz
+*.toc
