@@ -1,10 +1,7 @@
 to do:
-- prettify and listify functional decomposition
-- brain storming
-- morphological chart
+- report decision matrix results
+- create morphological chart
 - play on gannt chart 
-- literature survey
-- market survey 
 check out:
 - fusion360
 - webcam fiyatlarına özelliklerine bak, raspberry ile uyumlu

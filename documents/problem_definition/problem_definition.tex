@@ -1,0 +1,114 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in, headsep=25pt]{geometry}
+\usepackage{amsfonts,amsmath,amssymb}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{relsize}
+\usepackage[none]{hyphenat}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage{biblatex}
+\pagestyle{fancy}
+\parindent 0ex
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{\slshape\MakeUppercase{ME462 Project Report I}}
+\fancyhead[R]{\slshape {February 24, 2020}}
+\fancyfoot[C] {\textbf{\thepage}}
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}
+	
+\begin{titlepage}
+	\begin{center}
+		\vspace*{1cm}
+		\Large{\textbf{Middle East Technical University}\\
+			\Large{\textbf{Faculty of Engineering}}\\
+			\Large{\textbf{Department of Mechanical Engineering}}\\
+			\line(1,0){400}\\[1mm]
+			\huge{\textbf{ME462 Mechatronic Design\\ Spring 2020}}\\[3mm]
+			\Large{\textbf{Design and manufacture of a wheeled robot controlled by the movement of a fish swimming inside an aquarium}}\\[1mm]
+			\line(1,0){400}\\
+			\vfill
+			\textbf{By SayMyName:}\\
+			Sercan Aslan  1909902\\
+			Yusuf Can Coşkun  1939420\\
+			Ali Levent Çınar  2234532\\
+			\slshape {\textbf {February 24, 2020}}}\\
+	\end{center}
+\end{titlepage}
+\tableofcontents
+\cleardoublepage
+
+%%%%
+\section{Definition}
+This project aims to design and manufacture a wheeled robot controlled by the movement of a fish swimming inside and aquarium. This project was inspired by similar projects publicly available on the internet, such as [1]. Our goal is to design a robot that can move very smoothly compared to the existing examples. We plan to achieve this by carefully designing/selecting the wheels and motors. As this robot will be an important part of the mechatronics laboratory, it is important that it looks nice and it is durable. The robot should be able to interact with the fish, its environment and the network.
+
+%%%%
+\section{Requirements}
+	\begin{enumerate}
+		\item The robot should be able to navigate on the floors of the mechatronics laboratory, it should be able to accelerate and stop delibately.
+		\item The robot should avoid obstacles and should be able to detect the moving obstacles within its proximity.
+		\item The water inside the aquarium should be contained and it shouldn't be spilled, to this end the robot should be able to accelerate smoothly.
+		\item In order to ensure the health of the fish, foreign objects shouldn't be able to enter the aquarium water and care must be given to prevent tipping over of the robot.
+		\item The fish should be made aware of the robot's current action and status, for example by exposing the fish to color coded lights.
+		\item The temperature of the water should be monitored and if necessary, it should be regulated.
+		\item The robot should be able to self charge and it should be able operate for acceptable durations.
+		\item The robot should be able to feed the fish a healthy diet, this doesn't necessarily mean the feeding module is fixed to the robot, it can be a feeding station.
+		\item The robot should have navigational safety overrides that prevents the fish from controlling the movement of the robot, for example on the command of the authorized personnel or when the fish wants to rest.
+		\item The robot should be able to communicate with the network and it should be able to receive and transmit messages, such as reporting water temperature, battery charge, position etc.
+		\item The robot and its extensions (for example, if required, the docking station) should be aesthetically pleasing.
+		\item The robot should not pose any mechanical dangers to any humans.
+	\end{enumerate}
+
+%%%%
+\section{Specifications}
+	\begin{enumerate}
+		\item The water surface should not tilt over 10 degrees during acceleration. 
+		\item The robot should be able to operate at least for 6 hours a day for 2 years.
+		\item The aquarium should be positioned at a height of at least 30 cm for practical and aesthetical concerns.
+		\item The robot should be able to carry a weight of 20 kg including the aquarium water.
+		\item It is expected for the aquarium to contain at least 10 liters of water.
+		\item The final project cost is within 2000 TRY.
+	\end{enumerate}
+
+%%%%
+\section{Criteria}
+
+	\subsection{Mobility(40\%)}
+		\begin{enumerate}
+			\item It can move the aquarium around the mechatronics laboratory based on the movement of the fish while avoiding obstacles (20\%).
+			\item Smooth acceleration and braking (20\%).
+		\end{enumerate}
+	
+	\subsection{Durability(20\%)}
+		\begin{enumerate}
+			\item It can operate at least for 6 hours a day for 2 years (10\%).
+			\item It does not topple over easily (10\%).
+		\end{enumerate}
+	
+	\subsection{Aesthetics(15\%)}
+		\begin{enumerate}
+			\item Aesthetically pleasing to the eye (15\%).
+		\end{enumerate}
+	
+	\subsection{Interconnectivity(15\%)}
+		\begin{enumerate}
+			\item The robot can communicate with the network (15\%).
+		\end{enumerate}
+	
+	\subsection{Cost(10\%)}
+		\begin{enumerate}
+			\item The final project cost is within the budget (10\%).
+		\end{enumerate}
+	
+\section{References}
+[1] \texttt{https://www.youtube.com/watch?v=YbNmL6hSNKw}
+	\texttt{https://web.archive.org/web/20150314224900/http://www.lift-report.de/index.php/\\news/176/368/Elevator-Ride-Quality}
+	
+\end{document}
