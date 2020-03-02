@@ -27,12 +27,14 @@ minimum height=3em]
 	\node [cloud, right of=sub13, node distance=5 cm] (sub14) {Contain the water and fish};
 	\node [cloud, right of=sub14, node distance=5 cm] (sub15) {Power the robot};
 	\node [empty, left of=sub11, node distance=2 cm] (subsub10) {};
+	\node [empty, right of=subsub10, node distance=4 cm] (subsub100) {};
 	\node [block,  below of=subsub10] (subsub11) {Carry the aquarium};
 	\node [block, below of=subsub11] (subsub12) {Detect the position of the fish};
 	\node [block, below of=subsub12] (subsub13) {Detect obstacles};
-	\node [block, below of=subsub13] (subsub14) {Faciliate the movement};
-	\node [block, below of=subsub14] (subsub15) {Actuate the movement};
-	\node [block, below of=subsub15] (subsub16) {Control the movement};
+	\node [block, below of=subsub13] (subsub14) {Detect the position of robot};
+	\node [block, below of=subsub100, node distance=3cm] (subsub15) {Faciliate the movement};
+	\node [block, below of=subsub15] (subsub16) {Actuate the movement};
+	\node [block, below of=subsub16] (subsub17) {Control the movement};
 	\node [empty, right of=sub12, node distance= 2 cm] (subsub20) {};
 	\node [block, below of=subsub20] (subsub21) {Send and receive messages over the network};
 	\node [block, below of=subsub21] (subsub22) {Display the current status to nearby observers};
@@ -40,21 +42,22 @@ minimum height=3em]
 	\node [block, below of=subsub50] (subsub51) {Store the power};
 	\node [block, below of=subsub51] (subsub52) {Charge the storage};    
 	% Draw edges
-	\path [line] (header) -| (sub11);
-	\path [line] (header) -| (sub12);
-	\path [line] (header) -- node {9} (sub13);
-	\path [line] (header) -| node[near end] {10} (sub14);
-	\path [line] (header) -| (sub15);
-	\path [line] (sub11) |- node[near end] {1} (subsub11);
-	\path [line] (sub11) |- node[near end] {2} (subsub12);
-	\path [line] (sub11) |- node[near end] {3} (subsub13);
-	\path [line] (sub11) |- node[near end] {4} (subsub14);
-	\path [line] (sub11) |- node[near end] {5} (subsub15);
-	\path [line] (sub11) |- node[near end] {6} (subsub16);
-	\path [line] (sub12) |- node[near end] {7} (subsub21);
-	\path [line] (sub12) |- node[near end] {8} (subsub22);
-	\path [line] (sub15) |- node[near end] {11} (subsub51);
-	\path [line] (sub15) |- node[near end] {12} (subsub52);
+	\path [line] (header) -|  node[near end] {1} (sub11);
+	\path [line] (header) -|  node[near end] {2} (sub12);
+	\path [line] (header) -- node {3} (sub13);
+	\path [line] (header) -| node[near end] {4} (sub14);
+	\path [line] (header) -|  node[near end] {5} (sub15);
+	\path [line] (sub11) |- node[near end] {1-1} (subsub11);
+	\path [line] (sub11) |- node[near end] {1-2} (subsub12);
+	\path [line] (sub11) |- node[near end] {1-3} (subsub13);
+	\path [line] (sub11) |- node[near end] {1-4} (subsub14);
+	\path [line] (sub11) |- node[near end] {1-5} (subsub15);
+	\path [line] (sub11) |- node[near end] {1-6} (subsub16);
+	\path [line] (sub11) |- node[near end] {1-7} (subsub17);
+	\path [line] (sub12) |- node[near end] {2-1} (subsub21);
+	\path [line] (sub12) |- node[near end] {2-2} (subsub22);
+	\path [line] (sub15) |- node[near end] {5-1} (subsub51);
+	\path [line] (sub15) |- node[near end] {5-2} (subsub52);
 
 \end{tikzpicture}
 \end{document}
