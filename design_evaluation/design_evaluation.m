@@ -50,8 +50,8 @@ sum(pugh_control .* weight_control, 1)
 % Cost ResponseTime Precision Manufacturability
 input_detectPosition = [1 1/5 1/5 1/3; 0 1 1 3; 0 0 1 3; 0 0 0 1]
 weight_detectPosition = calculateahpweight(input_detectPosition)
-% OverheadCamera CameraOnTheRobot Cameraless
-pugh_detectPosition = [0 -1 1; 0 1 1; 0 1 -1; 0 1 1]
+% OverheadCamera WideCamera Cameraless MultipleCamera
+pugh_detectPosition = [0 -1 1 -1; 0 1 1 1; 0 1 -1 1; 0 1 1 1]
 sum(pugh_detectPosition .* weight_detectPosition, 1)
 
 %% 6. Send and receive messages over the network
@@ -78,7 +78,7 @@ weight_communicate = calculateahpweight(input_communicate)
 pugh_communicate = [0 -1; 0 -1; 0 1; 0 -1]
 sum(pugh_communicate .* weight_communicate, 1)
 
-%% 9. Contain the water and fish
+%% 9.1. Contain the water and fish
 % Cost Mountability Weight Visibility Aesthetics
 input_aquarium = [1 1/5 1/3 1/3 1/3; 0 1 3 3 3; 0 0 1 3 3; 0 0 0 1 3; 0 0 0 0 1]
 weight_aquarium = calculateahpweight(input_aquarium)
@@ -101,3 +101,27 @@ weight_charging = calculateahpweight(input_charging)
 % DanglingRoomMagnet DanglingRobotMagnet Mechanical Inductive
 pugh_charging = [1 1 0 -1; 1 1 0 -1; 0 0 0 -1; 1 1 0 1]
 sum(pugh_charging .* weight_charging, 1)
+
+%% 9.2. Feed the fish
+% Maintenance Compactness PortioningPrecision Manufacturability
+input_feed = [1 5 1/3 5; 1 1 1/5 1; 1 1 1 5; 1 1 1 1];
+weight_feed = calculateahpweight(input_feed)
+% Trapdoor Powerscrew ConveyorBelt Magazine
+pugh_feed = [-1 1 0 -1; 1 0 0 -1; -1 1 0 1; 1 1 0 -1];
+sum(pugh_feed .* weight_feed, 1)
+
+%% 9.3. Protect the fish against cats
+%  Effectiveness Cost Manufacturability Reliability
+input_protect = [1 5 5 1; 1 1 1/3 1/5; 1 1 1 1/5; 1 1 1 1];
+weight_protect = calculateahpweight(input_protect)
+pugh_protect = [-1 0 -1; -1 0 1; -1 0 1; -1 0 -1];
+sum(pugh_protect .* weight_protect)
+% Noise Cover Movement
+
+%% Overall conceptual design
+% Stability Aesthetics Cost AquariumRemoval Manufacturability HolonomicMotion WeightCarrying
+input_overall = [1 5 3 3 3 3 1; 1 1 3 1/3 3 1/5 1/5; 1 1 1 1/5 1/3 1/5 1/3; 1 1 1 1 3 1/3 3; 1 1 1 1 1 1/3 1/3; 1 1 1 1 1 1 5; 1 1 1 1 1 1 1]
+weight_overall = calculateahpweight(input_overall)
+% HexagonalBelow HexagonalAbove Basket Rack
+pugh_overall = [1 1 0 0; 1 1 0 1; 1 1 0 0; 0 -1 0  1; -1 -1 0 -1; 1 1 0 0; -1 -1 0 1]
+sum(pugh_overall .* weight_overall)
