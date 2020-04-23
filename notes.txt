@@ -1,7 +1,2 @@
-to do:
-- report decision matrix results
-- create morphological chart
-- play on gannt chart 
-check out:
-- fusion360
-- webcam fiyatlarına özelliklerine bak, raspberry ile uyumlu
+cool library for 3d animations in python: https://ipyvolume.readthedocs.io/en/latest/examples/animation.html
+
