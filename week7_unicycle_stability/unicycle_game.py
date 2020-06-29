@@ -7,7 +7,7 @@ from threading import Thread
 import numpy as np
 
 class Game(Thread):
-    def __init__(self, y0, dy0, update_unicycle, d, l, th_desired=0, dth_desired=0, t0=0, fps=30, canvas_width=600, canvas_height=300, meter_in_pixels=100):        
+    def __init__(self, y0, dy0, update_unicycle, d, l, th0_desired=0, dth0_desired=0, t0=0, fps=30, canvas_width=600, canvas_height=300, meter_in_pixels=100):        
         self.dt = 1 / fps # simulation timestep
         self.y = y0
         self.dy = dy0
@@ -15,11 +15,10 @@ class Game(Thread):
         self.d = d
         self.l = l
         
-        self.th_desired = th_desired
-        self.dth_desired = dth_desired
+        self.th_desired = th0_desired
+        self.dth_desired = dth0_desired
         
         self.time = t0
-        self.fps = 0
         self.is_running = True
 
         self.canvas_width = canvas_width
@@ -30,6 +29,10 @@ class Game(Thread):
         self.event = ipe.Event(source=self.canvas, watched_events=['keydown'])
         self.event.on_dom_event(self.handle_events) 
         
+        self.t_history = None
+        self.ydyd2y_history = None
+        self.th_desired_history = None
+
         super(Game, self).__init__()
         
     # main loop
@@ -47,7 +50,16 @@ class Game(Thread):
             self.time = tick - start_time 
             self.fps = 1 / frame_time
             self.draw_text(self.canvas[2], self.fps, self.time, self.y, self.dy, self.d2y, r, self.th_desired)
-   
+            
+            if self.t_history is None:
+                self.t_history = self.time
+                self.ydyd2y_history = np.concatenate((self.y, self.dy, self.d2y))
+                self.th_desired_history = self.th_desired
+            else:
+                self.t_history = np.append(self.t_history, self.time)
+                self.ydyd2y_history = np.vstack((self.ydyd2y_history, np.concatenate((self.y, self.dy, self.d2y))))
+                self.th_desired_history = np.append(self.th_desired_history, self.th_desired)
+        
             if self.dt - (time() - tick) > 0:
                 sleep(self.dt - (time() - tick))
             frame_time = time() - tick
@@ -161,10 +173,10 @@ class Game(Thread):
             canvas.fill_text('FPS: {:.0f}'.format(fps), pos[0], pos[1])
             canvas.fill_text('Time: {:.1f} s'.format(time), pos[0], pos[1] + spacing)
             canvas.fill_text('\u03B8: {:.1f}\u00B0'.format(to_180degrees(to_degrees(y[0]))), pos[0], pos[1] + 2 * spacing)
-            canvas.fill_text('\u03C6: {:.1f}\u00B0'.format(to_180degrees(to_degrees(y[1]))), pos[0], pos[1] + 3 * spacing)
-            canvas.fill_text('pos: {:.1f} m'.format(y[1] * 2 * r), pos[0], pos[1] + 4 * spacing)
-            canvas.fill_text('vel: {:.1f} m/s'.format(dy[1] * 2 * r), pos[0], pos[1] + 5 * spacing)
-            canvas.fill_text('acc: {:.1f} m/s\u00B2'.format(d2y[1] * 2 * r), pos[0], pos[1] + 6 * spacing)
+            #canvas.fill_text('\u03C6: {:.1f}\u00B0'.format(to_180degrees(to_degrees(y[1]))), pos[0], pos[1] + 3 * spacing)
+            canvas.fill_text('pos: {:.1f} m'.format(y[1] * 2 * r), pos[0], pos[1] + 3 * spacing)
+            canvas.fill_text('vel: {:.1f} m/s'.format(dy[1] * 2 * r), pos[0], pos[1] + 4 * spacing)
+            canvas.fill_text('acc: {:.1f} m/s\u00B2'.format(d2y[1] * 2 * r), pos[0], pos[1] + 5 * spacing)
             pos = (265, 20)
             centering_shift = 75
             canvas.font = '14px serif'
