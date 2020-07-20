@@ -1,0 +1,7 @@
+input: total investment (money) f
+system: employees
+a: 1 / managers (managers = inertance, managers handle the flow of money, more managers leads to faster rate of profit)
+b: lawyers (lawyers = damping, lawyers invest in insurance and deal with lawsuits counteracting on profits, more lawyers leads to slower profit)
+c: 1 / workers (workers = compliance, workers create value, more labor leads to more total profit)
+output: rate of profit (money/day^2) d2x,  profit (money/day) dx, total profit (money) x
+a * d2x + b * dx + c * x = f 
